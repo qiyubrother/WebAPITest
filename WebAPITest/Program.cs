@@ -16,12 +16,12 @@ namespace WebAPITest
         {
             //var baseURL = "http://192.168.10.81:8080";
             var baseURL = "http://192.168.20.3:8080";
+            DebugHelper debugHelper = new DebugHelper();
+            debugHelper.StartService();
+
             #region 课程分类与专业
             {
                 var url = $"{baseURL}/courseManager/courseTypeAndCourseMajorCategory.do";
-
-                DebugHelper debugHelper = new DebugHelper();
-                debugHelper.StartService();
                 debugHelper.Print($"课程分类与专业::{WebAPIHelper.GetResultByPost(url)}");
             }
             #endregion
@@ -29,9 +29,6 @@ namespace WebAPITest
             #region 同步课程/直播课程时间表
             {
                 var url = $"{baseURL}/courseManager/syncLiveCourseTimeTable.do";
-
-                DebugHelper debugHelper = new DebugHelper();
-                debugHelper.StartService();
                 debugHelper.Print($"同步课程/直播课程时间表::{WebAPIHelper.GetResultByPost(url)}");
             }
             #endregion
@@ -39,9 +36,6 @@ namespace WebAPITest
             #region 获取学习兴趣
             {
                 var url = $"{baseURL}/personalInterest/getPersonalInterestList.do";
-
-                DebugHelper debugHelper = new DebugHelper();
-                debugHelper.StartService();
                 debugHelper.Print($"获取学习兴趣::{WebAPIHelper.GetResultByPost(url)}");
             }
             #endregion
